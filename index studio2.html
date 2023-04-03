@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AI vs Real Image Generator</title>
+		<style>
+			#image-container {
+				text-align: center;
+				margin-top: 20px;
+				
+			}
+			#button-container {
+				display: flex;
+				justify-content: center;
+				margin-top: 20px;
+			}
+			button {
+				padding: 10px;
+				margin: 0 10px;
+				font-size: 18px;
+				cursor: pointer;
+				border-radius: 5px;
+				border: none;
+				background-color: #ccc;
+				color: #333;
+				box-shadow: 2px 2px 2px #ccc;
+			}
+			button:hover {
+				background-color: #333;
+				color: #fff;
+				box-shadow: none;
+			}
+			.incorrect {
+				animation: flash 1s infinite;
+				background-color: #ff6666;
+			}
+			@keyframes flash {
+				0% {
+					background-color: #ff6666;
+				}
+				50% {
+					background-color: #ff3333;
+				}
+				100% {
+					background-color: #ff6666;
+				}
+			}
+			#score {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				font-size: 24px;
+				font-weight: bold;
+			}
+			a.next{
+				
+				position: absolute;
+				top: 817px;
+				right: 90px;
+				font-size: 24px;
+				font-weight: bold;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div id="jumptonextpages">
+			<a href="file:///Users/mc/Documents/GitHub/pancake/index%20studio.html" class="next">NEXT</a>
+		</div>
+		<div id="score">0/20</div>
+
+		<div id="image-container">
+			<img id="display-image" height="750">
+			 <div id="count-container">
+		        <span id="incorrect-count">Incorrect: 0/20</span>
+		    </div>
+		</div>
+		
+		<div id="button-container">
+			<button onclick="selectReal()">“Man-made”</button>
+			<button onclick="selectAI()">AI</button>
+		</div>
+		
+		
+		<script>
+			var images = [
+				{
+					src: "images/ture1.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai1.jpg",
+					type: "AI"
+				},
+				{
+					src: "images/ture2.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai2.jpg",
+					type: "AI"
+				},
+				{
+					src: "images/ture3.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai3.jpg",
+					type: "AI"
+				},
+				{
+					src: "images/ture4.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai4.jpg",
+					type: "AI"
+				},
+				{
+					src: "images/ture5.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai5.jpg",
+					type: "AI"
+				},
+				{
+					src: "images/ture6.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai6.jpg",
+					type: "AI"
+				},
+				{
+					src: "images/ture7.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai7.jpg",
+					type: "AI"
+				},
+				{
+					src: "images/ture8.jpg",
+					type: "real"
+				},
+				{
+					src: "images/ai8.jpg",
+					type: "AI"
+				}
+				
+			];
+
+			var currentImageIndex = 0;
+			var incorrectCount = 0;
+			var scoreCount = 0;
+
+			
+			function displayCurrentImage() {
+			    var image = document.getElementById("display-image");
+			    var randomIndex;
+			    do {
+			        randomIndex = Math.floor(Math.random() * images.length);
+			    } while (randomIndex === currentImageIndex); // to avoid displaying the same image twice in a row
+			    currentImageIndex = randomIndex;
+			    image.src = images[currentImageIndex].src;
+			}	
+
+			
+			function selectReal() {
+				if (images[currentImageIndex].type === "real") {
+					currentImageIndex = (currentImageIndex + 1) % images.length;
+					displayCurrentImage();
+					scoreCount++;
+       				updateScoreCount();
+				} else {
+					document.body.classList.add("incorrect");
+					setTimeout(function() {
+						document.body.classList.remove("incorrect");
+					}, 1000);
+					incorrectCount++;
+        			updateIncorrectCount();
+				}
+			}
+			
+			function selectAI() {
+				if (images[currentImageIndex].type === "AI") {
+					currentImageIndex = (currentImageIndex + 1) % images.length;
+					displayCurrentImage();
+					scoreCount++;
+       				updateScoreCount();
+				} else {
+					document.body.classList.add("incorrect");
+					setTimeout(function() {
+						document.body.classList.remove("incorrect");
+					}, 1000);
+					incorrectCount++;
+        			updateIncorrectCount();
+				}
+			}
+			function updateIncorrectCount() {
+			    var countElem = document.getElementById("incorrect-count");
+			    countElem.textContent = "Incorrect: " + incorrectCount + "/20";
+			}
+
+			function updateScoreCount() {
+			    var scoreElem = document.getElementById("score");
+			    scoreElem.textContent = scoreCount + "/20";
+			}
+			
+			window.onload = function() {
+				currentImageIndex = Math.floor(Math.random() * images.length);
+				displayCurrentImage();
+			}
+		</script>
+
+	</body>
+</html>
