@@ -1,0 +1,89 @@
+hr{
+    background: rgba(0, 0, 0, 0.85);
+    border: 0;
+    height: 0.5rem;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-block-start: 0.2em; 
+    margin-block-end: 0.2em;   
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+}
+a,a:visited{
+    color: #000;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #777;
+    text-decoration: none;
+}
+.left_container{
+    margin-top: 10px;
+    margin-left: 5px;
+    position: absolute;
+    width: 50%;
+    box-sizing: border-box;
+}
+.right_container{
+    margin-left:900px;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    position: absolute;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.75);
+    font-style: normal;
+    line-height: 1.2;
+    font-family: sans-serif;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.First{
+    margin: -1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: space-between;
+    min-height: 180px;
+}
+.article{
+    font-size: 60pt;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    font-family: sans-serif;
+    font-style: normal;
+    overflow: hidden;
+    position: relative;
+}
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.marquee a {
+    text-decoration: none;
+    color: #333;
+    padding-right: 50px;
+}
+
+.marquee a:hover {
+    color: #777;
+}
+.copyright p{
+    font-size: 8pt;
+    font-family: sans-serif;
+    color: #999;
+}
+body {
+  cursor: url('mouse-default.png'), auto;
+}
+
+a, a:hover, a:active {
+  cursor: url('mouse--pointer.png'), pointer;
+}
