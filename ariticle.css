@@ -61,4 +61,5 @@ h1{
 p{
     font-size: 20pt;
     font-family: serif;
+    column-count: 3;   
 }
