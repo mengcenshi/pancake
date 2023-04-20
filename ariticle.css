@@ -79,6 +79,7 @@ h2{
 p{
     font-size: 16pt;
     font-family: serif;
+<<<<<<< HEAD
     margin-bottom: 35px;
 }
 .top-button-link-container.no-media-page.w--current{
@@ -130,4 +131,7 @@ p{
     font-size: 30pt;
     font-family: 'PloniMLv2AAA-Regular', sans-serif;
     margin-left: 5px;
+=======
+    column-count: 3;   
+>>>>>>> e2f29f4648322ffef260eea52037f3ed6707c90c
 }
