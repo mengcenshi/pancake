@@ -1,3 +1,45 @@
+#massgae{
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+#title-container {
+  font-size: 72px;
+  opacity: 1;
+  transition: font-size 1s ease-out, opacity 1s ease-out;
+  margin-top: -60px;
+}
+
+/* Define the visible state of the title */
+#title-container.visible {
+  font-size: 36px;
+  opacity: 1;
+}
+#title-container.delayed {
+  transition-delay: 1s;
+}
+
+/* Set the initial state of the image to off-screen left */
+/*#image-container {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}*/
+
+/* Define the visible state of the image */
+
+
+
+/*#subimage1-img {
+  /* Add styles here */
+}*/
+
+
+
+#image-container.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .fixed-container {
   position: fixed;
   top: 0;
@@ -6,6 +48,7 @@
   background-color: #ffffff; 
   z-index: 1000;
 }
+
 
 hr{
     background: rgba(0, 0, 0, 0.85);
@@ -62,6 +105,10 @@ a, a:hover, a:active {
     padding: 0 3rem;
      margin-top: 200px;
 }
+.image{
+    position: relative;
+    padding: inherit;
+}
 h1{
     font-size: 50pt;
     font-family:'PloniMLv2AAA-Bold', sans-serif;
@@ -69,13 +116,15 @@ h1{
     text-align: center;
 }
 h2{
-    font-size: 16pt;
+    font-size: 25pt;
      font-family:'PloniMLv2AAA-Medium', sans-serif;
      text-align: center;
+     color:orange;
 }
-.title{
+/*.title{
     margin-top: -60px;
-}
+}*/
+
 p{
     font-size: 16pt;
     font-family: serif;

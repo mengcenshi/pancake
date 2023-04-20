@@ -38,7 +38,7 @@ a:hover{
     color: rgba(0, 0, 0, 0.75);
     font-style: normal;
     line-height: 1.2;
-    font-family: 'PloniMLv2AAA-Regular', sans-serif;
+    font-family: sans-serif;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -55,7 +55,7 @@ a:hover{
     font-size: 60pt;
     font-weight: bold;
     color: rgba(0, 0, 0, 1);
-    font-family: 'PloniMLv2AAA-Medium', sans-serif;
+    font-family: sans-serif;
     font-style: normal;
     overflow: hidden;
     position: relative;
@@ -65,19 +65,16 @@ a:hover{
     white-space: nowrap;
     position: relative;
     margin-bottom: 0;
-
 }
 
 .marquee a {
     text-decoration: none;
-    color: black;
+    color: #333;
     padding-right: 50px;
 }
 
 .marquee a:hover {
-    color: white;
-
-
+    color: #777;
 }
 .copyright p{
     font-size: 8pt;
@@ -86,24 +83,8 @@ a:hover{
 }
 body {
   cursor: url('mouse-default.png'), auto;
-  transition: background-image 1s ease-in-out;
 }
 
 a, a:hover, a:active {
   cursor: url('mouse--pointer.png'), pointer;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  pointer-events: none;
-  z-index: -1;
-  transition: opacity 1s ease-in-out;
 }

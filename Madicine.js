@@ -41,3 +41,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const marquees = document.querySelectorAll(".marquee");
   marquees.forEach(initializeMarquee);
 });
+
+function setBackgroundImage(imageUrl) {
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center';
+}
+function removeBackgroundImage() {
+  document.body.style.backgroundImage = '';
+}
+
+document.querySelectorAll('.marquee').forEach((element, index) => {
+  const images = [
+    'image1.jpg',
+    'image2.jpg',
+    'image3.jpg',
+    'image4.jpg',
+    'image5.jpg'
+  ];
+
+  element.addEventListener('mouseenter', () => {
+    setBackgroundImage(images[index]);
+  });
+
+  element.addEventListener('mouseleave', () => {
+    removeBackgroundImage();
+  });
+});
+
