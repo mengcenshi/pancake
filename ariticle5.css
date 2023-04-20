@@ -7,6 +7,7 @@
   opacity: 1;
   transition: font-size 1s ease-out, opacity 1s ease-out;
   margin-top: -60px;
+
 }
 
 /* Define the visible state of the title */
@@ -19,11 +20,14 @@
 }
 
 /* Set the initial state of the image to off-screen left */
-/*#image-container {
-  transform: translateX(-100%);
+#image-container {
+  /*transform: translateX(-100%);
   opacity: 0;
-  transition: transform 1s ease-out, opacity 1s ease-out;
-}*/
+  transition: transform 1s ease-out, opacity 1s ease-out;*/
+  display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
 /* Define the visible state of the image */
 
@@ -31,7 +35,13 @@
 
 /*#subimage1-img {
   /* Add styles here */
-}*/
+
+
+.image-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
 
 
