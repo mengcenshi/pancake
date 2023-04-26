@@ -27,7 +27,7 @@ function initializeMarquee(marquee) {
   function marqueeLoop() {
     currentPosition -= marqueeSpeed;
     if (currentPosition <= -marqueeWidth) {
-      currentPosition = 0;
+      currentPosition += marqueeWidth;
     }
 
     marqueeWrapper.style.transform = `translateX(${currentPosition}px)`;
@@ -43,21 +43,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function setBackgroundImage(imageUrl) {
+  const gradientBackground = document.getElementById('gradient-background');
+  gradientBackground.style.opacity = '0';
   document.body.style.backgroundImage = `url('${imageUrl}')`;
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center';
 }
 function removeBackgroundImage() {
+  const gradientBackground = document.getElementById('gradient-background');
+  gradientBackground.style.opacity = '1';
   document.body.style.backgroundImage = '';
 }
 
 document.querySelectorAll('.marquee').forEach((element, index) => {
   const images = [
-    'image1.jpg',
-    'image2.jpg',
-    'image3.jpg',
-    'image4.jpg',
-    'image5.jpg'
+    'image1.gif',
+    'image2.gif',
+    'image3.gif',
+    'image4.gif',
+    // 'image5.jpg'
   ];
 
   element.addEventListener('mouseenter', () => {
@@ -68,4 +72,3 @@ document.querySelectorAll('.marquee').forEach((element, index) => {
     removeBackgroundImage();
   });
 });
-

@@ -1,0 +1,154 @@
+#gradient-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  animation: gradientBackground 5s ease infinite;
+  background: linear-gradient(270deg, red, white, blue);
+  background-size: 200% 200%;
+}
+
+body, body > *:not(::before) {
+  cursor: url('mouse-default.png'), auto;
+}
+
+hr {
+  background: white;
+  border: 0;
+  height: 0.5rem;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+}
+
+a, a:visited {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #777;
+  text-decoration: none;
+}
+
+.left_container {
+  margin-top: 10px;
+  margin-left: 5px;
+  position: absolute;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.right_container {
+  margin-left: 900px;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  position: absolute;
+  font-weight: 500;
+  color: white;
+  font-style: normal;
+  line-height: 1.2;
+  font-family: 'PloniMLv2AAA-Regular', sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.First {
+  margin: -1rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.article {
+  font-size: 60pt;
+  font-weight: bold;
+  color: white;
+  font-family: 'PloniMLv2AAA-Medium', sans-serif;
+  font-style: normal;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.marquee a {
+  text-decoration: none;
+  color: white;
+  padding-right: 50px;
+}
+
+.marquee a:hover {
+  color: #777;
+}
+
+.copyright p {
+  font-size: 8pt;
+  font-family: sans-serif;
+  color: #999;
+}
+
+body {
+  cursor: url('mouse-default.png'), auto;
+}
+#fade-in-image {
+  width: 100vw;
+  height: 100vh;
+  animation: fade 1.5s ease 0s 1 forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('fadein.gif');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+a, a:hover, a:active {
+  cursor: url('mouse--pointer.png'), pointer;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+  25% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}

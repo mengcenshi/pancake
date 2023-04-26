@@ -1,0 +1,253 @@
+/*body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    background-color: pink;
+}*/
+
+body {
+    font-family: Arial, sans-serif;
+/*    background: linear-gradient(135deg, #FFA69E 10%, #FF686B 100%);*/
+    background-size: 200% 200%;
+    transition: background-position 0.5s;
+}
+
+#lens {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    backdrop-filter: invert(100%);
+    transition: transform 0.1s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+}
+
+#lens.active {
+  width: 300px;
+  height: 300px;
+}
+
+#fade-in-image {
+  width: 100vw;
+  height: 100vh;
+  animation: fade 1.5s ease 0s 1 forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('fadein.gif');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+25% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+#massgae{
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+#title-container {
+  font-size: 72px;
+  opacity: 1;
+  transition: font-size 1s ease-out, opacity 1s ease-out;
+  margin-top: -60px;
+}
+
+/* Define the visible state of the title */
+#title-container.visible {
+  font-size: 36px;
+  opacity: 1;
+}
+#title-container.delayed {
+  transition-delay: 1s;
+}
+
+/* Set the initial state of the image to off-screen left */
+#image-container {
+  /*transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Define the visible state of the image */
+
+
+
+/*#subimage1-img {
+  /* Add styles here */
+}*/
+
+
+
+#image-container.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.fixed-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000; 
+  z-index: 1000;
+}
+
+
+hr{
+    background: rgba(0, 0, 0, 0.85);
+    border: 0;
+    height: 0.3rem;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-block-start: 0.2em; 
+    margin-block-end: 0.2em;   
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+}
+.back{
+    position: absolute;
+    right: 4vw;
+    display: flex;
+    font-size: 50pt;
+    font-style: normal;
+    font-family: sans-serif;
+    margin-top: -20px;
+   
+
+}
+
+#bott a{
+     color: white;
+}
+
+.icon{
+    margin-top: 10px;
+    margin-left: 5px;
+    box-sizing: border-box;
+}
+a,a:visited{
+    color: #000;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #777;
+    text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+body {
+  cursor: url('mouse-default.png'), auto;
+}
+
+a, a:hover, a:active {
+  cursor: url('mouse--pointer.png'), pointer;
+}
+.article{
+    padding: 0 3rem;
+     margin-top: 200px;
+}
+.image{
+    position: relative;
+    padding: inherit;
+}
+h1{
+    font-size: 50pt;
+    font-family:'PloniMLv2AAA-Bold', sans-serif;
+    line-height: 80px;
+    text-align: center;
+}
+h2{
+    font-size: 25pt;
+     font-family:'PloniMLv2AAA-Medium', sans-serif;
+     text-align: center;
+     color:black;
+}
+/*.title{
+    margin-top: -60px;
+}*/
+
+p{
+    font-size: 16pt;
+    font-family: serif;
+    margin-bottom: 35px;
+}
+.top-button-link-container.no-media-page.w--current{
+    z-index: 4;
+    margin-top: 9vw;
+    display: none;
+    box-shadow: none;
+    overflow: visible;
+
+}
+.top-button-link-container{
+    position: fixed;
+    display: none;
+    top: 500px;
+    right: 0%;
+    bottom: auto;
+    margin-right:4vw ;
+    margin-top: 16vw;
+    border-radius: 100vw;
+    font-size: 30pt;
+}
+.top-button-link-container.hide{
+    display: none;
+}
+
+.w-inline-block{
+    max-width: 100%;
+}
+.grid{
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-right:35px ;
+    padding-left: 35px;
+    position: static;
+}
+@media screen and (min-width:768px){
+    .grid{
+        padding-left: 37px;
+        padding-right:37px ;
+        float:none;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 724px;
+        width: 80%;
+    }
+}
+.other-links{
+    font-size: 30pt;
+    font-family: 'PloniMLv2AAA-Regular', sans-serif;
+    margin-left: 5px;
+}

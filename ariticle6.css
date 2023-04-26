@@ -1,3 +1,63 @@
+/*body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    background-color: pink;
+}*/
+
+body {
+    font-family: Arial, sans-serif;
+/*    background: linear-gradient(135deg, #FFA69E 10%, #FF686B 100%);*/
+    background-size: 200% 200%;
+    transition: background-position 0.5s;
+}
+
+#lens {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    backdrop-filter: invert(100%);
+    transition: transform 0.1s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+}
+
+#lens.active {
+  width: 300px;
+  height: 300px;
+}
+
+#fade-in-image {
+  width: 100vw;
+  height: 100vh;
+  animation: fade 1.5s ease 0s 1 forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('fadein.gif');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+25% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
 #massgae{
   opacity: 0;
   transition: opacity 1s ease-out;
@@ -48,7 +108,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #ffffff; 
+  background-color: #000; 
   z-index: 1000;
 }
 
@@ -74,6 +134,8 @@ hr{
     font-style: normal;
     font-family: sans-serif;
     margin-top: -20px;
+    color: white;
+
 }
 .icon{
     margin-top: 10px;
@@ -81,7 +143,7 @@ hr{
     box-sizing: border-box;
 }
 a,a:visited{
-    color: #000;
+    color: #fff;
 }
 a{
     text-decoration: none;
@@ -122,7 +184,7 @@ h2{
     font-size: 25pt;
      font-family:'PloniMLv2AAA-Medium', sans-serif;
      text-align: center;
-     color:orange;
+     color:black;
 }
 /*.title{
     margin-top: -60px;

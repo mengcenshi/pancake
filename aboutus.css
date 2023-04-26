@@ -131,3 +131,29 @@ p{
         width: 80%;
     }
 }
+#fade-in-image {
+  width: 100vw;
+  height: 100vh;
+  animation: fade 1.5s ease 0s 1 forwards;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('fadein.gif');
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+25% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
