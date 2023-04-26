@@ -303,24 +303,16 @@
             topButton.style.display = "none";
           }
         });
-        // const titleContainer = document.getElementById('title-container');
-
-        // // Add delayed class after 1 second
-        // setTimeout(() => {
-        //     titleContainer.classList.add('delayed');
-        // }, 1000);
-
-        // const titleContainer = document.getElementById('title-container');
+       
         const fontContainer = document.getElementById('font-container');
         const imageContainer = document.getElementById('image-container');
-        // const massage1Container = document.getElementById('massage');
-        // const title1Container = document.getElementById('title1');
+     
+
 
 
        window.addEventListener('scroll', () => {
           const scrollPosition = window.scrollY;
-          // const massage1Position = massage1Container.getBoundingClientRect().top;
-          // const title1Position = title1Container.getBoundingClientRect().top;
+        
           // Check if the user has scrolled past the title
           if (scrollPosition > titleContainer.offsetTop) {
             titleContainer.classList.add('visible');
@@ -335,10 +327,7 @@
           if (scrollPosition > imageContainer.offsetTop) {
             imageContainer.classList.add('visible');
           }
-          //  if (massage1Position <= title1Position) {
-          //   massage1Container.style.opacity = 1;
-          // }
-        });
+                  });
        window.addEventListener("scroll", function() {
           var body = document.querySelector("body");
           var scrollPercent = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
@@ -350,6 +339,9 @@
           var hue = percent * 120;
           return "hsl(" + hue + ", 100%, 50%)";
         }
+
+
+
 
        // Get all text and image elements
        const lens = document.getElementById('lens');
@@ -379,16 +371,6 @@
         });
 
         // Previous code (lens related)
-
-      // Add this new function
-      function changeBackgroundColor() {
-          const scrollPercentage = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-          const newPosition = 100 - (scrollPercentage * 100);
-          document.body.style.backgroundPosition = `${newPosition}% ${newPosition}%`;
-      }
-
-      // Add an event listener for scrolling
-      window.addEventListener('scroll', changeBackgroundColor);
 
     </script>
   </body>
